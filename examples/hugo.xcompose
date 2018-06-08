@@ -1,259 +1,165 @@
-###############
-# Greek Letters
-###############
+--
+-- Greek
+--
 
-U03B1	α	aa	# alpha
-U03B2	β	bb	# beta
-U03B3	γ	gg	# gamma
-U03B4	δ	dd	# delta
-U03B5	ε	ee	# epsilon
-U03B6	ζ	zz	# zeta
-U03B7	η	hh	# eta
-U03B8	θ	th	# theta
-U03B9	ι	ii	# iota
-U03BA	κ	kk	# kappa
-U03BB	λ	ll	# lambda
-U03BC	μ	mm	# mu
-U03BD	ν	nn	# nu
-U03BE	ξ	xx	# xi
-U03BF	ο	oo	# omicron
-U03C0	π	pp	# pi
-U03C1	ρ	rr	# rho
-U03C3	σ	ss	# sigma
-U03C4	τ	tt	# tau
-U03C5	υ	uu	# upsilon
-U03C6	φ	ff	# phi
-U03C7	χ	qq	# chi
-U03C8	ψ	ps	# psi
-U03C9	ω	ww	# omega
+local greek = {
+  a="α",A="Α",
+  b="β",B="Β",
+  g="γ",G="Γ",
+  d="δ",D="Δ",
+  e="ε",E="Ε",
+  z="ζ",Z="Ζ",
+  h="η",H="Η",
+  j="θ",J="Θ",
+  i="ι",I="Ι",
+  k="κ",K="Κ",
+  l="λ",L="Λ",
+  m="μ",M="Μ",
+  n="ν",N="Ν",
+  x="ξ",X="Ξ",
+  o="ο",O="Ο",
+  p="π",P="Π",
+  r="ρ",R="Ρ",
+  s="σ",S="Σ",
+  t="τ",T="Τ",
+  u="υ",U="Υ",
+  f="φ",F="Φ",
+  q="χ",Q="Χ",
+  y="ψ",Y="Ψ",
+  w="ω",W="Ω",
+}
 
-U03C2	ς	sx	# \varsigma
-U0278	ɸ	o|	# \phi
+for c, output in pairs(greek) do
+  rule {output=output, compose_key=false, input={keysym'dead_greek', c}}
+  rule {output=output, compose_key=true,  input={'g', c}}
+end
 
-U0391	Α	AA	# Alpha
-U0392	Β	BB	# Beta
-U0393	Γ	GG	# Gamma
-U0394	Δ	DD	# Delta
-U0395	Ε	EE	# Epsilon
-U0396	Ζ	ZZ	# Zeta
-U0397	Η	HH	# Eta
-U0398	Θ	TH	# Theta
-U0399	Ι	II	# Iota
-U039A	Κ	KK	# KappaF
-U039B	Λ	LL	# Lambda
-U039C	Μ	MM	# Mu
-U039D	Ν	NN	# Nu
-U039E	Ξ	XX	# Xi
-U039F	Ο	OO	# Omicron
-U03A0	Π	PP	# Pi
-U03A1	Ρ	RR	# Rho
-U03A3	Σ	SS	# Sigma
-U03A4	Τ	TT	# Tau
-U03A5	Υ	UU	# Upsilon
-U03A6	Φ	FF	# Phi
-U03A7	Χ	QQ	# Chi
-U03A8	Ψ	PS	# Psi
-U03A9	Ω	WW	# Omega
+--
+-- Vulgar Fractions
+--
 
-##########################
-# Blackboard bold letters
-##########################
-
-U2102	ℂ	C|
-U210D	ℍ	H|
-U2115	ℕ	N|
-U2119	ℙ	P|
-U211A	ℚ	Q|
-U211D	ℝ	R|
-U2124	ℤ	Z|
-
-##########################
-# Summations and products
-##########################
-
-U220F	∏	!PP_
-U2210	∐	!PP?
-U2211	∑	!SS
-
-U22C0	⋀	!V?
-U22C1	⋁	!V_
-U22C2	⋂	!U?
-U22C3	⋃	!U_
-
-###########
-# Brackets
-###########
-
-U2308	⌈	[-
-U2309	⌉	]-
-U230A	⌊	[\_
-U230B	⌋	]\_
-
-U27E6	⟦	|[
-U27E7	⟧	|]
-
-# Mathematical angle brackets
-U27E8	⟨	!<_
-U27E9	⟩	!>_
-U27EA	⟪	!<<
-U27EB	⟫	!>>
-
-########
-# Arrows
-########
-
-# Single arrows
-U2190	←	<-_
-U2191	↑	|^_
-U2192	→	->_
-U2193	↓	|v_
-U2194	↔	<->_
-
-U219C	↜	<~_
-U219D	↝	~>_
-
-U21A4	↤	<-|_
-U21A6	↦	|->_
-
-U21A9	↩	<-)_
-U21AA	↪	(->_
-
-U21AD	↭	<~>_
-
-U21D0	⇐	<=_
-U21D1	⇑	||^_
-U21D2	⇒	=>_
-U21D3	⇓	||v_
-U21D4	⇔	<=>_
-
-U21DC	⇜	<z_
-U21DD	⇝	z>_
-
-U27F5	⟵	<--_
-U27F6	⟶	-->_
-
-U27F8	⟸	<==_
-U27F9	⟹	==>_
-U27FA	⟺	<==>_
-
-U27FB	⟻	<--|_
-U27FC	⟼	|-->_
+rule "¼" "14"
+rule "½" "12"
+rule "¾" "34"
 
 
-########
-# Logic
-########
+--
+-- Rules
+--
 
-U00AC	¬	-_
+rule "ℂ" "C|"
+rule "ℍ" "H|"
+rule "ℕ" "N|"
+rule "ℙ" "P|"
+rule "ℚ" "Q|"
+rule "ℝ" "R|"
+rule "ℤ" "Z|"
 
-U2200	∀	A?
-U2203	∃	E?
-U2204	∄	E/?
+rule "∏" "!PP "
+rule "∐" "!PP?"
+rule "∑" "!SS"
+rule "⋀" "!V?"
+rule "⋁" "!V "
+rule "⋂" "!U?"
+rule "⋃" "!U "
+rule "⌈" "[-"
+rule "⌉" "]-"
+rule "⌊" "[_"
+rule "⌋" "]_"
+rule "⟦" "|["
+rule "⟧" "|]"
 
-U2227	∧	V?
-U2228	∨	V_
+rule "⟨" "!< "
+rule "⟩" "!> "
+rule "⟪" "!<<"
+rule "⟫" "!>>"
 
-U22A4	⊤	T_
-U22A5	⊥	T?
+rule "¬" "- "
+rule "∀" "A?"
+rule "∃" "E?"
+rule "∄" "E/?"
+rule "∧" "V?"
+rule "∨" "V "
 
-# Turnstiles
-U22A2	⊢	|-_
-U22A3	⊣	-|_
-U22A8	⊨	|=_
-U22A9	⊩	||-_
-U22AA	⊪	|||-_
-U22AB	⊫	||=_
-U22AC	⊬	|-/
-U22AD	⊭	|=/
-U22AE	⊮	||-/
-U22AF	⊯	||=/
+rule "⊤" "T "
+rule "⊥" "T?"
 
-#######
-# Sets
-#######
+rule "∩" "U?"
+rule "∪" "U "
 
-U2205	∅	O/
+rule "∅" "O/"
 
-U2208	∈	(-_
-U2209	∉	(-/
-U220B	∋	)-_
-U220C	∌	)-/
+rule "÷" "-:"
+rule "÷" ":-"
+rule "ℓ" "l "
 
-U2229	∩	U?
-U222A	∪	U_
+rule "≔" ":= "
+rule "≕" "=: "
+rule "≜" "=^ "
+rule "≝" "=d "
 
-#######################
-# Comparison operators
-#######################
+--
+-- Binary Predicates
+--
 
-# Symmetric
-U223C	∼	~_
-U2241	≁	~/
+local function bin_pred(yes, no, m)
+  if yes then rule(yes, m.." ") end
+  if no  then rule(no,  m.."/") end
+end
 
-U2243	≃	~\__
-U2243	≃	\_~_
-U2244	≄	~\_/
-U2244	≄	\_~/
+bin_pred("⊢", "⊬", "|-")
+bin_pred("⊣", nil, "-|")
+bin_pred("⊨", "⊭", "|=")
+bin_pred("⊩", "⊮", "||-")
+bin_pred("⊫", "⊯", "||=")
+bin_pred("⊪", nil, "|||-")
+bin_pred("∈", "∉", "(-")
+bin_pred("∼", "≁", "~")
+bin_pred("≃", "≄", "~_")
+bin_pred("≃", "≄", "_~")
+bin_pred("≅", "≆", "~=")
+bin_pred("≅", "≆", "=~")
+bin_pred("≈", "≉", "~~")
+bin_pred("=", "≠", "=")
+bin_pred("≡", "≢", "==")
+bin_pred("≤", "≰", "=<")
+bin_pred("≥", "≱", ">=")
+bin_pred(nil, "≮", "<")
+bin_pred(nil, "≯", ">")
+bin_pred("⊂", "⊄", "(")
+bin_pred("⊃", "⊅", ")")
+bin_pred("⊆", "⊈", "(=")
+bin_pred("⊇", "⊉", ")=")
+bin_pred("⊏", nil, "[")
+bin_pred("⊐", nil, "]")
+bin_pred("⊑", nil, "[=")
+bin_pred("⊒", nil, "]=")
 
-U2245	≅	~=_
-U2245	≅	=~_
-U2246	≆	~=/
-U2246	≆	=~/
+--
+-- Arrows
+--
 
-U2248	≈	~~_
-U2249	≉	~~/
+local function lr_arrow(arr_l, arr_r, arr_lr, m, l, r)
+  l = l or ''
+  r = r or ''
+  if arr_l  then rule(arr_l,  "<".. m .. r .." ") end
+  if arr_r  then rule(arr_r,   l .. m ..">".." ") end
+  if arr_lr then rule(arr_lr, "<".. m ..">".." ") end
+end
 
-U2254	≔	:=_
-U2255	≕	=:_
+local function ud_arrow(arr_u, arr_d, m)
+  if arr_u then rule(arr_u, m .."^".." ") end
+  if arr_d then rule(arr_d, m .."v".." ") end
+end
 
-U225C	≜	=^_
-U225D	≝	=d_
-
-
-U2260	≠	=/
-U2261	≡	==_
-U2262	≢	==/
-U2264	≤	=<_
-U2265	≥	>=_
-U226E	≮	</
-U226F	≯	>/
-U2270	≰	<=/
-U2271	≱	>=/
+lr_arrow("←", "→", "↔",  "-" ); ud_arrow("↑", "↓", "|")
+lr_arrow("⇐", "⇒", "⇔",  "=" ); ud_arrow("⇑", "⇓", "||")
+lr_arrow("↜", "↝", "↭",  "~" )
+lr_arrow("⇜", "⇝", nil,  "z" )
+lr_arrow("⟵", "⟶", nil,  "--")
+lr_arrow("⟸", "⟹", "⟺",  "==")
+lr_arrow("↤", "↦", nil,  "-" , "|", "|")
+lr_arrow("⟻", "⟼", nil,  "--", "|", "|")
+lr_arrow("↩", "↪", nil,  "-" , "(", ")")
 
 
-U2282	⊂	(_
-U2283	⊃	)_
-U2284	⊄	(/
-U2285	⊅	)/
-U2286	⊆	(=_
-U2287	⊇	)=_
-U2288	⊈	(=/
-U2289	⊉	)=/
-
-U228F	⊏	[_
-U2290	⊐	]_
-U2291	⊑	[=_
-U2292	⊒	]=_
-
-############
-# Arithmetic
-############
-
-U00F7	÷	-:
-U00F7	÷	:-
-
-# U00D7	×	x_
-
-##############
-# Miscelaneous
-##############
-
-U00B1	±	+-
-U2213	∓	-+
-
-U22C6	⋆	*_
-
-U201C	“	``	 # Left double quotation mark
-U201D	”	´´	 # Right double quotation mark
-
-U2113	ℓ	l_	 # Mathematical symbol "ell"

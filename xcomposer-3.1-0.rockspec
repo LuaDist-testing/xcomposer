@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "xcomposer"
-version = "1.0-1"
+version = "3.1-0"
 -- LuaDist source
 source = {
-  tag = "1.0-1",
+  tag = "3.1-0",
   url = "git://github.com/LuaDist-testing/xcomposer.git"
 }
 -- Original source
 -- source = {
 --   url = "git://github.com/hugomg/xcomposer",
---   tag = "v1.0",
+--   tag = "v3.1",
 -- }
 description = {
   summary = "A DSL for more readable .XCompose files",
@@ -20,11 +20,14 @@ description = {
 dependencies = {
   "argparse",
   "dromozoa-utf8",
+  "f-strings",
 }
 build = {
   type = "builtin",
   modules = {
-    ["xcomposer.keysyms"] = "src/xcomposer/keysyms.lua",
+    ["xcomposer.ComposeFile"] = "src/xcomposer/ComposeFile.lua",
+    ["xcomposer.tables"]      = "src/xcomposer/tables.lua",
+    ["xcomposer.util"]        = "src/xcomposer/util.lua",
   },
   install = {
     bin = {
