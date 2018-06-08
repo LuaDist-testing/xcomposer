@@ -1,21 +1,21 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "xcomposer"
-version = "3.1-0"
+version = "3.2-0"
 -- LuaDist source
 source = {
-  tag = "3.1-0",
+  tag = "3.2-0",
   url = "git://github.com/LuaDist-testing/xcomposer.git"
 }
 -- Original source
 -- source = {
 --   url = "git://github.com/hugomg/xcomposer",
---   tag = "v3.1",
+--   tag = "v3.2",
 -- }
 description = {
   summary = "A DSL for more readable .XCompose files",
   homepage = "https://github.com/hugomg/xcomposer",
-  license = "MIT",
+  license = "GPLv3",
 }
 dependencies = {
   "argparse",
